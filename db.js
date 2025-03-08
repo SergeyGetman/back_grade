@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const dbURL = `mongodb+srv://${process.env.MONGODB_URI}:${process.env.MONGODB_PASS}@cluster0.couga.mongodb.net/`;
+const dbURL = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env
+	.MONGODB_URI}/messagesDB`;
 
 mongoose.connect(dbURL, {
 	useNewURLParser: true,
